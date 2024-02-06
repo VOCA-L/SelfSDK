@@ -7,9 +7,10 @@ project(SelfSDK VERSION 1.0.0)
 
 # Import CMAKE utilitis
 include(cmake/macro.cmake)
+include(cmake/directory.cmake)
 
 # Print Compiler information
-message(STATUS "Compiler")
+message(STATUS " - Compiler")
 message(STATUS " - ID       \t: ${CMAKE_CXX_COMPILER_ID}")
 message(STATUS " - Version  \t: ${CMAKE_CXX_COMPILER_VERSION}")
 message(STATUS " - Path     \t: ${CMAKE_CXX_COMPILER}")

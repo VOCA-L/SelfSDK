@@ -52,11 +52,10 @@ class Point
   Dimension dim;
 
  public:
-    Point(T x1, T y1) : x(x1), y(y1) { dim = Dimension::D2; }
+  // Point(T x1, T y1) : x(x1), y(y1) { dim = Dimension::D2; }
 };
 
 }  // namespace geometry
-
 }  // namespace sdk
 
 #endif
