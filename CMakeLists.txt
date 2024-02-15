@@ -27,6 +27,9 @@ if (CMAKE_BUILD_TYPE STREQUAL "Debug")
 endif()
 
 # Add sub directory
+## Components
 add_subdirectory(components/geometry)
 
+## Test program
+add_subdirectory(test/geometry)
 # target_include_directories(SelfSDK PUBLIC componets)
