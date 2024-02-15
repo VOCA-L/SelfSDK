@@ -1,4 +1,4 @@
-#include "../include/point.h"
+#include "point.hpp"
 
 namespace sdk {
 namespace geometry {

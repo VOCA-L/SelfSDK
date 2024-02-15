@@ -9,6 +9,11 @@ namespace geometry {
 // To-Do
 // Add concet for using NUMBER (e.g. int, float...)
 
+template <typename T>
+class BasePoint
+{
+};
+
 /**
  * 2D Coordinate Point
  */
@@ -36,6 +41,17 @@ class Point3D
 
  public:
   Point3D(T x, T y, T z) : x_(x), y_(y), z_(z){};
+};
+
+template <typename T>
+class PolarPoint
+{
+ private:
+  T distance_;
+  T range_;
+
+ public:
+  PolarPoint(T dist, T r) : distance_(dist), range_(r){};
 };
 
 }  // namespace geometry

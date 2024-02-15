@@ -1,3 +1,5 @@
+set(PREFIX "self")
+
 # PATH name
 set(CMAKE_INSTALL_PREFIX ${CMAKE_SOURCE_DIR}/output) # ROOT
 # set(OUTPUT_EXECUTE_DIRECTORY )
