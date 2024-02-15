@@ -33,3 +33,6 @@
 
 # CMAKE result
 build
+
+# config.h
+config.h

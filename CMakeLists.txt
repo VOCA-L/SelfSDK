@@ -5,6 +5,12 @@ cmake_minimum_required(VERSION 3.20)
 ## Project information
 project(SelfSDK VERSION 1.0.0)
 
+# Configuraion version
+configure_file(
+    "${PROJECT_SOURCE_DIR}/cmake/config.h.in"
+    "${CMAKE_SOURCE_DIR}/config.h"
+)
+
 # Import CMAKE utilitis
 include(cmake/macro.cmake)
 include(cmake/directory.cmake)
