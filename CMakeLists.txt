@@ -15,6 +15,8 @@ configure_file(
 include(cmake/macro.cmake)
 include(cmake/directory.cmake)
 
+define_cpp_version()
+
 # Print Compiler information
 message(STATUS " - Compiler")
 message(STATUS " - ID       \t: ${CMAKE_CXX_COMPILER_ID}")

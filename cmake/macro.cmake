@@ -1,6 +1,6 @@
 # Cpp version 
 macro(define_cpp_version)
-    set(CMAKE_CXX_STANDARD 13)
+    set(CMAKE_CXX_STANDARD 20)
     set(CMAKE_CXX_STANDARD_REQUIRED true)
 endmacro(define_cpp_version)
 
