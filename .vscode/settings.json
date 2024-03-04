@@ -1,0 +1,11 @@
+{
+  "files.associations": {
+    "*.txt": "cmake",
+    "*.ipp": "cpp",
+    "deque": "cpp",
+    "string": "cpp",
+    "vector": "cpp",
+    "iterator": "cpp",
+    "concepts": "cpp"
+  }
+}
