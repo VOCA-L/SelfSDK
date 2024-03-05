@@ -48,6 +48,9 @@ class Point2D
   {
     return (x_ != target.x_ || y_ != target.y_);
   }
+
+  P x() { return x_; }
+  P y() { return y_; }
 };
 
 /**
@@ -87,7 +90,7 @@ class PolarPoint2D
   eDimension dim_ = eDimension::D2;
 
  public:
-  PolarPoint2D(PP dist, PP r) : distance_(dist), range_(r) {}
+  PolarPoint2D(PP theta, PP dist) : distance_(dist), range_(theta) {}
 
   bool operator==(const PolarPoint2D& target) const
   {
@@ -102,7 +105,12 @@ class PolarPoint2D
 template <allowed_type T>
 double distance(Point2D<T>& alpha, Point2D<T>& beta);
 
+template <allowed_type T>
+PolarPoint2D<T> toPolar(Point2D<T>);
+
 }  // namespace geometry
 }  // namespace sdk
+
+
 
 #endif
