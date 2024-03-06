@@ -39,4 +39,5 @@ output
 sdk_config.h
 
 # vscode 
-.vscode
+.vscode/
+.cache/
