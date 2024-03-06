@@ -1,9 +1,12 @@
 #pragma once
 
 #include "point.hpp"
+#include "geometry_define.hpp"
 
 namespace sdk {
 namespace geometry {
+
+// FUNCTION ---------------
 
 template <allowed_type T>
 double distance(Point2D<T>& alpha, Point2D<T>& beta)

@@ -33,8 +33,14 @@ concept dim3_type = requires(const point_class& p) { p.dim_ == eDimension::D3; }
 template <allowed_type T>
 class BasePoint
 {
+ protected:
+  eDimension dim_;
+
  public:
-  int dimension();
+  int dimension()
+  {
+    return static_cast<int>(dim_);
+  }
 };
 
 /**
@@ -44,17 +50,12 @@ template <allowed_type P>
 class Point2D : public BasePoint<P>
 {
  private:
-  P          x_;
-  P          y_;
-  eDimension dim_ = eDimension::D2;
+  P x_;
+  P y_;
 
  public:
-  Point2D(P x, P y) : x_(x), y_(y){};
-
-  int dimension()
-  {
-    return static_cast<int>(dim_);
-  }
+  Point2D() : x_(0), y_(0) { this->dim_ = eDimension::D2; };
+  Point2D(P x, P y) : x_(x), y_(y) { this->dim_ = eDimension::D2; };
 
   bool operator==(const Point2D& target) const
   {
@@ -73,7 +74,7 @@ class Point2D : public BasePoint<P>
  * 3D Coordinate Point
  */
 template <allowed_type P>
-class Point3D
+class Point3D : public BasePoint<P>
 {
  private:
   P          x_;
@@ -82,9 +83,8 @@ class Point3D
   eDimension dim_ = eDimension::D3;
 
  public:
-  Point3D(P x, P y, P z) : x_(x), y_(y), z_(z) {}
-
-  int dimension();
+  Point3D() : x_(0), y_(0), z_(0) { this->dim_ = eDimension::D3; };
+  Point3D(P x, P y, P z) : x_(x), y_(y), z_(z) { this->dim_ = eDimension::D3; };
 
   bool operator==(const Point3D& target) const
   {
@@ -100,15 +100,15 @@ class Point3D
  * Polar 2D Coordiante Point
  */
 template <allowed_type PP>
-class PolarPoint2D
+class PolarPoint2D : public BasePoint<PP>
 {
  private:
   PP         distance_;
   PP         range_;
-  eDimension dim_ = eDimension::D2;
 
  public:
-  PolarPoint2D(PP theta, PP dist) : distance_(dist), range_(theta) {}
+  PolarPoint2D() = delete;
+  PolarPoint2D(PP theta, PP dist) : distance_(dist), range_(theta) { this->dim_ = eDimension::D2; };
 
   int dimension();
 

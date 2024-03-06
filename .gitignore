@@ -37,3 +37,6 @@ output
 
 # config.h
 sdk_config.h
+
+# vscode 
+.vscode
