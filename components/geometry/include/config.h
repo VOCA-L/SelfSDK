@@ -1,0 +1,11 @@
+#define SDK_MAJOR_VERSION 1
+#define SDK_MINOR_VERSION 0
+#define SDK_PATCH_VERSION 0
+
+enum class ReturnCode
+{
+  SUCCESS,
+  INVALID_ARGUMENT,
+  INVALID_TYPE,
+  NONE
+};

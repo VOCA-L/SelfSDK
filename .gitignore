@@ -33,6 +33,7 @@
 
 # CMAKE result
 build
+output
 
 # config.h
-config.h
+sdk_config.h

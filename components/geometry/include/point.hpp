@@ -1,7 +1,10 @@
 #ifndef SELF_SDK_GEOMETRY_POINT_H
 #define SELF_SDK_GEOMETRY_POINT_H
 
+// #pragma once
+
 // #include "config.h"
+#include <cmath>
 #include <concepts>
 
 namespace sdk {
@@ -9,9 +12,10 @@ namespace geometry {
 
 enum class eDimension
 {
-  None,
-  D2,
-  D3,
+  None,       //
+  Undefined,  // No Init
+  D2,         // 2 Dimension
+  D3,         // 2 Dimension
 };
 
 // Number check
@@ -26,11 +30,18 @@ concept dim2_type = requires(const point_class& p) { p.dim_ == eDimension::D2; }
 template <typename point_class>
 concept dim3_type = requires(const point_class& p) { p.dim_ == eDimension::D3; };
 
+template <allowed_type T>
+class BasePoint
+{
+ public:
+  int dimension();
+};
+
 /**
  * 2D Coordinate Point
  */
 template <allowed_type P>
-class Point2D
+class Point2D : public BasePoint<P>
 {
  private:
   P          x_;
@@ -39,6 +50,11 @@ class Point2D
 
  public:
   Point2D(P x, P y) : x_(x), y_(y){};
+
+  int dimension()
+  {
+    return static_cast<int>(dim_);
+  }
 
   bool operator==(const Point2D& target) const
   {
@@ -68,6 +84,8 @@ class Point3D
  public:
   Point3D(P x, P y, P z) : x_(x), y_(y), z_(z) {}
 
+  int dimension();
+
   bool operator==(const Point3D& target) const
   {
     return (x_ == target.x_ && y_ == target.y_ && z_ == target.z_);
@@ -92,6 +110,8 @@ class PolarPoint2D
  public:
   PolarPoint2D(PP theta, PP dist) : distance_(dist), range_(theta) {}
 
+  int dimension();
+
   bool operator==(const PolarPoint2D& target) const
   {
     return (distance_ == target.distance_ && range_ == target.range_);
@@ -102,15 +122,7 @@ class PolarPoint2D
   }
 };
 
-template <allowed_type T>
-double distance(Point2D<T>& alpha, Point2D<T>& beta);
-
-template <allowed_type T>
-PolarPoint2D<T> toPolar(Point2D<T>);
-
 }  // namespace geometry
 }  // namespace sdk
-
-
 
 #endif

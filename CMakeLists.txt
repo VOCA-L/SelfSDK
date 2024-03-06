@@ -7,8 +7,8 @@ project(SelfSDK VERSION 1.0.0)
 
 # Configuraion version
 configure_file(
-    "${PROJECT_SOURCE_DIR}/cmake/config.h.in"
-    "${CMAKE_SOURCE_DIR}/config.h"
+    "${PROJECT_SOURCE_DIR}/cmake/sdk_config.h.in"
+    "${CMAKE_SOURCE_DIR}/sdk_config.h"
 )
 
 # Import CMAKE utilitis
