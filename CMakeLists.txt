@@ -5,6 +5,9 @@ cmake_minimum_required(VERSION 3.20)
 ## Project information
 project(SelfSDK VERSION 1.0.0)
 
+## C++ compiler version
+set(CMAKE_CXX_STANDARD 20)
+
 # Import CMAKE utilitis
 include(cmake/macro.cmake)
 include(cmake/directory.cmake)
@@ -20,7 +23,9 @@ if (CMAKE_BUILD_TYPE STREQUAL "Debug")
     add_compile_definitions(DEBUGGING_MODE)
 endif()
 
-# Add sub directory
+# Add sub directory (Geometry, so file)
 add_subdirectory(components/geometry)
 
+# Add sub directory (Test, exe file)
+add_subdirectory(test/geometry-test)
 # target_include_directories(SelfSDK PUBLIC componets)
