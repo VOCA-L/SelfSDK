@@ -1,8 +1,10 @@
-get_directory_name(TARGET)
+get_target_name(TARGET)
 
 ## Create Shared Library
 add_library(${TARGET} SHARED
     src/point.cpp
+    src/line.cpp
+    src/polygon.cpp
 )
 
 # Copy file
