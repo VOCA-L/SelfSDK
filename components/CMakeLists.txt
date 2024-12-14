@@ -1,0 +1,1 @@
+add_subdirectory(${COMPONENTS_PATH}/function)

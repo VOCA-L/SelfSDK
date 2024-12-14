@@ -1,0 +1,1 @@
+build_test_program(function_test main.cpp)

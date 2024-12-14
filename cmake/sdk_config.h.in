@@ -1,6 +1,15 @@
+#ifndef SDK_CONFIG_H
+#define SDK_CONFIG_H
+
+// clang-format off
 #define SDK_MAJOR_VERSION @PROJECT_VERSION_MAJOR@
 #define SDK_MINOR_VERSION @PROJECT_VERSION_MINOR@
 #define SDK_PATCH_VERSION @PROJECT_VERSION_PATCH@
+
+#define STRINGFY(x)     #x
+#define TO_STRING(x)    STRINGFY(x)
+
+#define SDK_VERSION TO_STRING(SDK_MAJOR_VERSION) "." TO_STRING(SDK_MINOR_VERSION) "." TO_STRING(SDK_PATCH_VERSION)
 
 enum class ReturnCode
 {
@@ -9,3 +18,6 @@ enum class ReturnCode
   INVALID_TYPE,
   NONE
 };
+// clang-format on
+
+#endif // SDK_CONFIG_H
