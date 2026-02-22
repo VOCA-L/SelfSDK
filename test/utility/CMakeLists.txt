@@ -3,6 +3,6 @@ TARGET
     utility_test 
 SOURCES
     main.cpp
-    ../../components/utility/crc/src/crc8.c
-    ../../components/utility/crc/src/crc16.c
+    ${COMPONENTS_PATH}/utility/crc/src/crc8.c
+    ${COMPONENTS_PATH}/utility/crc/src/crc16.c
     )
