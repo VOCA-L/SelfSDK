@@ -5,6 +5,7 @@
 
 int main()
 {
+  sdk::geometry::Point2D p(1, 2);
   sdk::geometry::Point2D p1(1, 2);
   sdk::geometry::Point2D p2(1, 2);
   sdk::geometry::Point2D p3(4, 5);

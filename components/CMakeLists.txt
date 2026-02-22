@@ -1,1 +1,1 @@
-add_subdirectory(${COMPONENTS_PATH}/function)
+add_subdirectory(${COMPONENTS_PATH}/utility)

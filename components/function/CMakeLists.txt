@@ -1,1 +1,0 @@
-build_shared_library(sdk_function src/function.cpp)
