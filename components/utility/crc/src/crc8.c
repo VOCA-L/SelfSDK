@@ -32,29 +32,74 @@ void setCRC8(CRC8_t* ctx, byte_t polynomial, byte_t init_value,
 #endif
 }
 
-// void setCRC8Type(CRC8_t *ctx, enum CRC8Type_t type) {
-//     switch (type) {
-//         /* 대표적인 CRC8 알고리즘 예시입니다. 
-//            crc-def.h에 정의된 매크로 이름에 맞게 수정하여 사용하세요. */
-//         case CRC8_TYPE_STANDARD:
-//             setCRC8(ctx, CRC8_POLY_STANDARD, CRC8_INIT_STANDARD, false, false, 0x00);
-//             break;
-//         case CRC8_TYPE_MAXIM:
-//             setCRC8(ctx, CRC8_POLY_MAXIM, CRC8_INIT_MAXIM, true, true, 0x00);
-//             break;
-//         case CRC8_TYPE_ROHC:
-//             setCRC8(ctx, CRC8_POLY_ROHC, CRC8_INIT_ROHC, true, true, 0x00);
-//             break;
-//         case CRC8_TYPE_WCDMA:
-//             setCRC8(ctx, CRC8_POLY_WCDMA, CRC8_INIT_WCDMA, true, true, 0x00);
-//             break;
-//         case CRC8_TYPE_CDMA2000:
-//             setCRC8(ctx, CRC8_POLY_CDMA2000, CRC8_INIT_CDMA2000, false, false, 0x00);
-//             break;
-//         default:
-//             break;
-//     }
-// }
+void setCRC8Type(CRC8_t *ctx, enum CRC8Type_t type) {
+    switch (type) {
+        /* 대표적인 CRC8 알고리즘 예시입니다. 
+           crc-def.h에 정의된 매크로 이름에 맞게 수정하여 사용하세요. */
+        case CRC8_TYPE_AUTOSAR:
+            setCRC8(ctx, CRC8_POLY_AUTOSAR, CRC8_INIT_AUTOSAR, false, false, 0x00);
+            break;
+        case CRC8_TYPE_BLUETOOTH:
+            setCRC8(ctx, CRC8_POLY_BLUETOOTH, CRC8_INIT_BLUETOOTH, true, true, 0x00);
+            break;
+        case CRC8_TYPE_CDMA2000:
+            setCRC8(ctx, CRC8_POLY_CDMA2000, CRC8_INIT_CDMA2000, false, false, 0x00);
+            break;
+        case CRC8_TYPE_DARC:
+            setCRC8(ctx, CRC8_POLY_DARC, CRC8_INIT_DARC, true, true, 0x00);
+            break;
+        case CRC8_TYPE_DVB_S2:
+            setCRC8(ctx, CRC8_POLY_DVB_S2, CRC8_INIT_DVB_S2, false, false, 0x00);
+            break;
+        case CRC8_TYPE_GSM_A:
+            setCRC8(ctx, CRC8_POLY_GSM_A, CRC8_INIT_GSM_A, false, false, 0x00);
+            break;
+        case CRC8_TYPE_GSM_B:
+            setCRC8(ctx, CRC8_POLY_GSM_B, CRC8_INIT_GSM_B, false, false, 0x00);
+            break;
+        case CRC8_TYPE_HITAG:
+            setCRC8(ctx, CRC8_POLY_HITAG, CRC8_INIT_HITAG, false, false, 0x00);
+            break;
+        case CRC8_TYPE_I_432_1:
+            setCRC8(ctx, CRC8_POLY_I_432_1, CRC8_INIT_I_432_1, false, false, 0x00);
+            break;
+        case CRC8_TYPE_I_CODE:
+            setCRC8(ctx, CRC8_POLY_I_CODE, CRC8_INIT_I_CODE, false, false, 0x00);
+            break;
+        case CRC8_TYPE_LTE:
+            setCRC8(ctx, CRC8_POLY_LTE, CRC8_INIT_LTE, false, false, 0x00);
+            break;
+        case CRC8_TYPE_MAXIM_DOW:
+            setCRC8(ctx, CRC8_POLY_MAXIM_DOW, CRC8_INIT_MAXIM_DOW, false, false, 0x00);
+            break;
+        case CRC8_TYPE_MIFARE_MAD:
+            setCRC8(ctx, CRC8_POLY_MIFARE_MAD, CRC8_INIT_MIFARE_MAD, false, false, 0x00);
+            break;
+        case CRC8_TYPE_NRSC_5:
+            setCRC8(ctx, CRC8_POLY_NRSC_5, CRC8_INIT_NRSC_5, false, false, 0x00);
+            break;
+        case CRC8_TYPE_OPENSAFETY:
+            setCRC8(ctx, CRC8_POLY_OPENSAFETY, CRC8_INIT_OPENSAFETY, false, false, 0x00);
+            break;
+        case CRC8_TYPE_ROHC:
+            setCRC8(ctx, CRC8_POLY_ROHC, CRC8_INIT_ROHC, true, true, 0x00);
+            break;
+        case CRC8_TYPE_SAE_J1850:
+            setCRC8(ctx, CRC8_POLY_SAE_J1850, CRC8_INIT_SAE_J1850,false,false , 0x00);
+            break;
+        case CRC8_TYPE_SMBUS:
+            setCRC8(ctx,CRC8_POLY_SMBUS,CRC8_INIT_SMBUS,false,false , 0x00);
+            break;
+        case CRC8_TYPE_TECH_3250:
+            setCRC8(ctx,CRC8_POLY_TECH_3250,CRC8_INIT_TECH_3250,false,false , 0x00);
+            break;
+        case CRC8_TYPE_WCDMA:
+            setCRC8(ctx,CRC8_POLY_WCDMA,CRC8_INIT_WCDMA,false,false , 0x00);
+            break;
+        default:
+            break;
+    }
+}
 
 /* 핵심 CRC 계산 로직 */
 byte_t calculateCRC8(CRC8_t* ctx, const byte_t* data, size_t length) {
