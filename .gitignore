@@ -36,7 +36,7 @@ build
 output
 
 # config.h
-sdk_config.h
+sdk-config.h
 
 # vscode 
 .vscode/
